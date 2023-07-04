@@ -3913,6 +3913,13 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.Touch.Exps.Alpha,
 		C3.Plugins.Touch.Exps.Beta,
 		C3.Plugins.Touch.Exps.Gamma,
+		C3.Plugins.Touch.Exps.CompassHeading,
+		C3.Plugins.Touch.Exps.AccelerationX,
+		C3.Plugins.Touch.Exps.AccelerationXWithG,
+		C3.Plugins.Touch.Exps.AccelerationY,
+		C3.Plugins.Touch.Exps.AccelerationYWithG,
+		C3.Plugins.Touch.Exps.AccelerationZ,
+		C3.Plugins.Touch.Exps.AccelerationZWithG,
 		C3.Plugins.Touch.Cnds.OnTapGesture,
 		C3.Plugins.Touch.Acts.RequestPermission,
 		C3.Plugins.UserMedia.Acts.RequestCamera
@@ -4026,7 +4033,14 @@ self.C3_ExpressionFuncs = [
 			const f0 = p._GetNode(0).GetBoundMethod();
 			const f1 = p._GetNode(1).GetBoundMethod();
 			const f2 = p._GetNode(2).GetBoundMethod();
-			return () => (and((and(and(f0(), "\n"), f1()) + "\n"), f2()) + "\n");
+			const f3 = p._GetNode(3).GetBoundMethod();
+			const f4 = p._GetNode(4).GetBoundMethod();
+			const f5 = p._GetNode(5).GetBoundMethod();
+			const f6 = p._GetNode(6).GetBoundMethod();
+			const f7 = p._GetNode(7).GetBoundMethod();
+			const f8 = p._GetNode(8).GetBoundMethod();
+			const f9 = p._GetNode(9).GetBoundMethod();
+			return () => (and((and((and((and((and((and(((and((and((and(and(f0(), "\n"), f1()) + "\n"), f2()) + "\n"), f3()) + "\n") + "\n"), f4()) + "\n"), f5()) + "\n"), f6()) + "\n"), f7()) + "\n"), f8()) + "\n"), f9()) + "\n");
 		},
 		() => 0
 ];
