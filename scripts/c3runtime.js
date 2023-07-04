@@ -3911,6 +3911,8 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.System.Cnds.EveryTick,
 		C3.Plugins.Text.Acts.SetText,
 		C3.Plugins.Touch.Exps.Alpha,
+		C3.Plugins.Touch.Exps.Beta,
+		C3.Plugins.Touch.Exps.Gamma,
 		C3.Plugins.Touch.Cnds.OnTapGesture,
 		C3.Plugins.Touch.Acts.RequestPermission,
 		C3.Plugins.UserMedia.Acts.RequestCamera
@@ -4022,7 +4024,9 @@ function or(l, r)
 self.C3_ExpressionFuncs = [
 		p => {
 			const f0 = p._GetNode(0).GetBoundMethod();
-			return () => f0();
+			const f1 = p._GetNode(1).GetBoundMethod();
+			const f2 = p._GetNode(2).GetBoundMethod();
+			return () => (and((and(and(f0(), "\n"), f1()) + "\n"), f2()) + "\n");
 		},
 		() => 0
 ];
